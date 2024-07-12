@@ -27,14 +27,34 @@ ChartJS.register(
 const LineChart = () => {
   const [chartData, setChartData] = useState(null);
   const [city, setCity] = useState("");
-  const [days, setDays] = useState();
+  const [days, setDays] = useState(1);
+  const [frequency, setFrequency] = useState("Daily");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const apiKey = "89d422cb71ae4c90ad3233708241007";
+  // const apiKey = "89d422cb71ae4c90ad3233708241007";
 
   useEffect(() => {
     fetchData();
-  }, [city, days]);
+  }, [city, days, frequency]);
+
+  useEffect(() => {
+    switch (frequency) {
+      case "Hourly":
+        setDays(1);
+        break;
+      case "Daily":
+        setDays(1);
+        break;
+      case "Monthly":
+        setDays(30);
+        break;
+      case "Yearly":
+        setDays(365);
+        break;
+      default:
+        setDays(1);
+    }
+  }, [frequency]);
 
   const fetchData = async () => {
     setLoading(true);
@@ -43,7 +63,6 @@ const LineChart = () => {
     try {
       const endDate = new Date();
       const startDate = new Date();
-      // @ts-ignore
       startDate.setDate(startDate.getDate() - days);
 
       const labels = [];
@@ -56,7 +75,9 @@ const LineChart = () => {
       ) {
         const dateString = d.toISOString().split("T")[0];
         const response = await fetch(
-          `http://api.weatherapi.com/v1/history.json?key=${apiKey}&q=${city}&dt=${dateString}`
+          `http://api.weatherapi.com/v1/history.json?key=${
+            import.meta.env.VITE_APP_SECRET_KEY
+          }&q=${city}&dt=${dateString}`
         );
 
         if (!response.ok) {
@@ -69,8 +90,22 @@ const LineChart = () => {
           data.forecast.forecastday &&
           data.forecast.forecastday.length > 0
         ) {
-          labels.push(dateString);
-          temperatures.push(data.forecast.forecastday[0].day.avgtemp_c);
+          if (frequency === "Hourly") {
+            //@ts-ignore
+            data.forecast.forecastday[0].hour.forEach((hourData) => {
+              labels.push(`${hourData.time.split(" ")[1]} - ${dateString}`);
+              temperatures.push(hourData.temp_c);
+            });
+          } else if (frequency === "Daily") {
+            //@ts-ignore
+            data.forecast.forecastday[0].hour.forEach((hourData) => {
+              labels.push(`${hourData.time.split(" ")[1]} - ${dateString}`);
+              temperatures.push(hourData.temp_c);
+            });
+          } else {
+            labels.push(dateString);
+            temperatures.push(data.forecast.forecastday[0].day.avgtemp_c);
+          }
         }
       }
 
@@ -83,7 +118,7 @@ const LineChart = () => {
         labels: labels,
         datasets: [
           {
-            label: "Average Temperature (°C)",
+            label: `Average Temperature (°C) - ${frequency}`,
             data: temperatures,
             borderColor: "rgb(76, 174, 79)",
             backgroundColor: "rgba(75,192,192,0.2)",
@@ -99,14 +134,18 @@ const LineChart = () => {
       setLoading(false);
     }
   };
+
   //@ts-ignore
   const handleCityChange = (event) => {
     setCity(event.target.value);
   };
   //@ts-ignore
   const handleDaysChange = (event) => {
-    //@ts-ignore
     setDays(parseInt(event.target.value));
+  };
+  //@ts-ignore
+  const handleFrequencyChange = (event) => {
+    setFrequency(event.target.value);
   };
 
   const options = {
@@ -118,7 +157,7 @@ const LineChart = () => {
       },
       title: {
         display: true,
-        text: `Temperature (°C) in Last ${days} Days for ${city}`,
+        text: `Temperature (°C) in Last ${days} Days for ${city} - ${frequency}`,
       },
     },
     scales: {
@@ -151,7 +190,7 @@ const LineChart = () => {
 
   return (
     <Container className="mt-8">
-      <SectionTitle fTitle="Temperature" lTitle="Analysis" description="" />
+      <SectionTitle fTitle="Weather" lTitle="Analysis" description="" />
       <div className="-mt-10">
         <motion.div
           initial={{ x: 200, scale: 0.5 }}
@@ -167,7 +206,7 @@ const LineChart = () => {
             placeholder="Enter Your City"
             value={city}
             onChange={handleCityChange}
-            className="px-2 py-1 border w-[90%]  border-[#4CAE4F] rounded"
+            className="px-2 py-1 border w-[90%] border-[#4CAE4F] rounded"
           />
           <input
             type="number"
@@ -175,7 +214,19 @@ const LineChart = () => {
             value={days}
             onChange={handleDaysChange}
             className="px-2 py-1 border w-[90%] border-[#4CAE4F] rounded"
+            disabled={frequency !== "Custom"}
           />
+          <select
+            value={frequency}
+            onChange={handleFrequencyChange}
+            className="px-2 py-1 border w-[90%] border-[#4CAE4F] rounded"
+          >
+            <option value="Hourly">Hourly</option>
+            <option value="Daily">Daily</option>
+            <option value="Monthly">Monthly</option>
+            <option value="Yearly">Yearly</option>
+            <option value="Custom">Custom</option>
+          </select>
         </motion.div>
         {error ? (
           <motion.p
