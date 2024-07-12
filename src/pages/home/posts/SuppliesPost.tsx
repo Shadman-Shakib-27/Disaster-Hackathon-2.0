@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 const SuppliesPost = () => {
   return (
-    <Container className="my-12">
+    <Container className="my-12 mt-24">
       <SectionTitle
         fTitle="Realtime"
         lTitle="Flood Affected People Detection"
@@ -22,17 +22,13 @@ const SuppliesPost = () => {
         }}
         className="relative flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0"
       >
-        <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4">
+        <div className="w-full md:w-1/2 flex flex-col justify-center -mt-6 items-start p-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h2>
           <p className="text-base md:text-lg mb-2">
-            At Disaster Relief Donation Platform, we are dedicated to providing
-            immediate relief and long-term support to communities affected by
-            natural disasters worldwide.
-          </p>
-          <p className="text-base md:text-lg">
-            We aim to support disaster-affected areas by providing necessary
-            supplies, funds, and resources. Join us in our mission to help those
-            in need.
+            Discover EnviroMonitor: Empowering disaster readiness with
+            cutting-edge AI technology. Experience real-time weather insights,
+            live drone footage for crisis response, and predictive analytics
+            using advanced machine learning. Stay informed, stay prepared.
           </p>
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">

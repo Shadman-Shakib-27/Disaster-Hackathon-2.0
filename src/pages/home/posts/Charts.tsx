@@ -13,6 +13,7 @@ import {
 } from "chart.js";
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
+import ClipLoader from "react-spinners/ClipLoader";
 
 ChartJS.register(
   CategoryScale,
@@ -126,7 +127,7 @@ const LineChart = () => {
         ],
       });
     } catch (error) {
-      console.error("Error fetching weather data:", error);
+      console.error("Error Fetching Weather Data:", error);
       //@ts-ignore
       setError(error.message);
     } finally {
@@ -227,7 +228,7 @@ const LineChart = () => {
             <option value="Custom">Custom</option>
           </select>
         </motion.div>
-        {error ? (
+        {error && (
           <motion.p
             initial={{ x: 200, scale: 0.5 }}
             animate={{ x: 0, scale: 1 }}
@@ -235,17 +236,20 @@ const LineChart = () => {
               type: "spring",
               duration: 2,
             }}
-            className="text-center text-red-500"
+            className="text-center text-red-500 mb-4"
           >
-            {error}
+            {/* {error} */}
           </motion.p>
+        )}
+        {loading ? (
+          <div className="flex justify-center items-center mt-16">
+            <ClipLoader color="#4CAE4F" loading={loading} size={50} />
+          </div>
         ) : chartData ? (
           //@ts-ignore
           <Line data={chartData} options={options} />
-        ) : loading ? (
-          <p className="text-center font-semibold text-[#4CAE4F]">Loading...</p>
         ) : (
-          <p className="text-center">
+          <p className="text-center text-red-500">
             No Data To Display, Please Add City And Days
           </p>
         )}

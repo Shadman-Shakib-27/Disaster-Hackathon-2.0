@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const RealtimeData = () => {
   return (
-    <Container className="">
+    <Container>
       <SectionTitle fTitle="Realtime" lTitle="Data Analysis" description="" />
       <motion.div
         initial={{ x: 200, scale: 0.5 }}

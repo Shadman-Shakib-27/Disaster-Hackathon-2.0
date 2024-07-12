@@ -34,24 +34,22 @@ const Hero = () => {
             >
               <motion.h1
                 variants={introChildren}
-                className="text-lg xxsm:text-xl md:text-3xl lg:text-4xl lg:font-extrabold font-bold leading-tight text-center md:text-left mt-48 sm:mt-0 md:mt-0"
+                className="text-lg xxsm:text-xl md:text-3xl lg:text-4xl lg:font-extrabold font-bold leading-tight text-center md:text-left mt-16 sm:mt-0 md:mt-0"
               >
-                Welcome to EnviroMonitor. <br />
+                Welcome to EnviroMonitor.
+                <br />
                 Your Premier Platform for Environmental Disaster Prediction and
                 Historical <br /> Data Analysis
               </motion.h1>
               <motion.p
                 variants={introChildren}
-                className="text-sm xxsm:text-base sm:text-lg md:text-black lg:text-lg text-justify max-w-[45ch] mx-auto md:mx-0"
+                className="text-sm xxsm:text-base sm:text-lg md:text-black lg:text-lg max-w-[55ch] mx-auto md:mx-0"
               >
-                Stay ahead of nature's unpredictable events with EnviroMonitor.
-                Our state-of-the-art platform offers: Real-Time Disaster Alerts:
-                Be informed instantly about potential environmental threats.
-                Predictive Analytics: Harness advanced machine learning to
-                forecast natural disasters. Comprehensive Historical Data:
-                Access detailed records and visualizations of past environmental
-                events. Interactive Maps: Explore data with our intuitive
-                GIS-based mapping tools.
+                Discover EnviroMonitor: Empowering disaster readiness with
+                cutting-edge AI technology. Experience real-time weather
+                insights, live drone footage for crisis response, and predictive
+                analytics using advanced machine learning. Stay informed, stay
+                prepared.
               </motion.p>
               <motion.div
                 variants={introChildren}
