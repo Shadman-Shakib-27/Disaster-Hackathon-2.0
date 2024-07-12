@@ -31,7 +31,6 @@ const LineChart = () => {
   const [frequency, setFrequency] = useState("Daily");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  // const apiKey = "89d422cb71ae4c90ad3233708241007";
 
   useEffect(() => {
     fetchData();
@@ -75,7 +74,7 @@ const LineChart = () => {
       ) {
         const dateString = d.toISOString().split("T")[0];
         const response = await fetch(
-          `http://api.weatherapi.com/v1/history.json?key=${
+          `https://api.weatherapi.com/v1/history.json?key=${
             import.meta.env.VITE_APP_SECRET_KEY
           }&q=${city}&dt=${dateString}`
         );
