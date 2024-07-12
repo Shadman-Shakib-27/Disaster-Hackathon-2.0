@@ -1,6 +1,5 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
-// import sampleVideo from "../../../assets/videos/Jamalpur Flood Detected.webm";
 import objDetection from "../../../assets/Images/ObjDetection.png";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
