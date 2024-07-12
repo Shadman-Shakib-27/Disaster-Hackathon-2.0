@@ -34,7 +34,7 @@ const Hero = () => {
             >
               <motion.h1
                 variants={introChildren}
-                className="text-lg xxsm:text-xl md:text-3xl lg:text-4xl font-black leading-tight text-center md:text-left mt-16 sm:mt-0 md:mt-0"
+                className="text-lg xxsm:text-xl md:text-3xl lg:text-4xl lg:font-extrabold font-bold leading-tight text-center md:text-left mt-16 sm:mt-0 md:mt-0"
               >
                 Welcome to EnviroMonitor.
                 <br />
