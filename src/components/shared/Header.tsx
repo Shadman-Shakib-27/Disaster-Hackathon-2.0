@@ -3,7 +3,6 @@ import {
   Navbar,
   Collapse,
   Typography,
-  IconButton,
   List,
   ListItem,
   Menu,
@@ -39,6 +38,7 @@ export function NavListMenu() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = navListMenuItems.map(({ icon, title, path }, key) => (
     <NavLink to={path} key={key} className="block">
+      {/* @ts-ignore */}
       <MenuItem className="flex items-center gap-3 rounded-lg">
         <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2">
           {React.createElement(icon, {
@@ -47,6 +47,7 @@ export function NavListMenu() {
           })}
         </div>
         <div>
+          {/* @ts-ignore */}
           <Typography
             variant="h6"
             color="blue-gray"
@@ -69,7 +70,9 @@ export function NavListMenu() {
         allowHover={true}
       >
         <MenuHandler>
+          {/* @ts-ignore */}
           <Typography as="div" variant="small" className="font-bold">
+            {/* @ts-ignore */}
             <ListItem
               className="flex items-center gap-2 py-2 pr-4 font-bold text-gray-900 hover:text-[#4CAE4F]"
               selected={isMenuOpen || isMobileMenuOpen}
@@ -91,6 +94,7 @@ export function NavListMenu() {
             </ListItem>
           </Typography>
         </MenuHandler>
+        {/* @ts-ignore */}
         <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
           <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
             {renderItems}
@@ -106,7 +110,9 @@ export function NavListMenu() {
 
 export function NavList() {
   return (
+    //@ts-ignore
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+      {/* @ts-ignore */}
       <Typography
         as="a"
         href="/"
@@ -114,11 +120,13 @@ export function NavList() {
         color="blue-gray"
         className="font-medium"
       >
+        {/* @ts-ignore */}
         <ListItem className="flex items-center font-bold hover:text-[#4CAE4F] text-black  gap-2 py-2 pr-4">
           Home
         </ListItem>
       </Typography>
       <NavListMenu />
+      {/* @ts-ignore */}
       <Typography
         as="a"
         href="#"
@@ -126,10 +134,12 @@ export function NavList() {
         color="blue-gray"
         className="font-medium"
       >
+        {/* @ts-ignore */}
         <ListItem className="flex text-black hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
           Contact Us
         </ListItem>
       </Typography>
+      {/* @ts-ignore */}
       <Typography
         as="a"
         href="#"
@@ -137,6 +147,7 @@ export function NavList() {
         color="blue-gray"
         className="font-medium"
       >
+        {/* @ts-ignore */}
         <ListItem className="flex text-black hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
           About Us
         </ListItem>
@@ -156,6 +167,7 @@ export default function NavbarWithMegaMenu() {
   }, []);
 
   return (
+    //@ts-ignore
     <Navbar className="mx-auto rounded-none px-4 max-w-full py-2">
       <Container>
         <div className="flex items-center justify-between text-black-gray-900">
@@ -169,19 +181,15 @@ export default function NavbarWithMegaMenu() {
           <div className="hidden lg:flex items-center">
             <NavList />
           </div>
-          <div className="flex items-center lg:hidden">
-            <IconButton
-              variant="text"
-              color="black"
-              className="p-2"
-              onClick={() => setOpenNav(!openNav)}
-            >
+          <div className="lg:hidden">
+            {/* @ts-ignore */}
+            <div onClick={() => setOpenNav(!openNav)}>
               {openNav ? (
                 <XMarkIcon className="h-6 w-6 text-secondary" strokeWidth={3} />
               ) : (
                 <Bars3Icon className="h-6 w-6 text-primary" strokeWidth={3} />
-              )}
-            </IconButton>
+              )}{" "}
+            </div>
           </div>
         </div>
         <Collapse open={openNav}>

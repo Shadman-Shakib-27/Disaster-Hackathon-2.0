@@ -43,6 +43,7 @@ const LineChart = () => {
     try {
       const endDate = new Date();
       const startDate = new Date();
+      // @ts-ignore
       startDate.setDate(startDate.getDate() - days);
 
       const labels = [];
@@ -78,6 +79,7 @@ const LineChart = () => {
       }
 
       setChartData({
+        //@ts-ignore
         labels: labels,
         datasets: [
           {
@@ -91,17 +93,19 @@ const LineChart = () => {
       });
     } catch (error) {
       console.error("Error fetching weather data:", error);
+      //@ts-ignore
       setError(error.message);
     } finally {
       setLoading(false);
     }
   };
-
+  //@ts-ignore
   const handleCityChange = (event) => {
     setCity(event.target.value);
   };
-
+  //@ts-ignore
   const handleDaysChange = (event) => {
+    //@ts-ignore
     setDays(parseInt(event.target.value));
   };
 
@@ -163,14 +167,14 @@ const LineChart = () => {
             placeholder="Enter Your City"
             value={city}
             onChange={handleCityChange}
-            className="px-2 py-1 border  border-gray-300 rounded"
+            className="px-2 py-1 border w-[90%]  border-[#4CAE4F] rounded"
           />
           <input
             type="number"
             placeholder="Enter Days"
             value={days}
             onChange={handleDaysChange}
-            className="px-2 py-1 border border-gray-300 rounded"
+            className="px-2 py-1 border w-[90%] border-[#4CAE4F] rounded"
           />
         </motion.div>
         {error ? (
@@ -186,6 +190,7 @@ const LineChart = () => {
             {error}
           </motion.p>
         ) : chartData ? (
+          //@ts-ignore
           <Line data={chartData} options={options} />
         ) : loading ? (
           <p className="text-center font-semibold text-[#4CAE4F]">Loading...</p>

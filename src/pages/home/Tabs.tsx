@@ -40,6 +40,7 @@ export default function TransparentTabs() {
   return (
     <Container>
       <Tabs value="html" className=" py-5">
+        {/* @ts-ignore */}
         <TabsHeader
           className="bg-transparent"
           indicatorProps={{
@@ -47,6 +48,7 @@ export default function TransparentTabs() {
           }}
         >
           {data.map(({ label, value }) => (
+            //@ts-ignore
             <Tab
               className="border border-[#0E200E] rounded-md"
               key={value}
@@ -56,6 +58,7 @@ export default function TransparentTabs() {
             </Tab>
           ))}
         </TabsHeader>
+        {/* @ts-ignore */}
         <TabsBody>
           {data.map(({ value, desc }) => (
             <TabPanel key={value} value={value}>

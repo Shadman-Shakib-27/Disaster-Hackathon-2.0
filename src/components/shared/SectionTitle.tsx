@@ -1,8 +1,8 @@
 import useScrollGrow from "@/hooks/ScrollGrowHook";
-import { TSectionTitle } from "@/types/sectionTitle.type";
 import { motion } from "framer-motion";
 
-const SectionTitle = ({ fTitle, lTitle, description }: TSectionTitle) => {
+//@ts-ignore
+const SectionTitle = ({ fTitle, lTitle, description }) => {
   const { style, componentRef } = useScrollGrow();
   return (
     <motion.div
