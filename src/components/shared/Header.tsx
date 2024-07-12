@@ -27,9 +27,9 @@ const navListMenuItems = [
     path: "/realtime",
   },
   {
-    title: "Realtime Temp (°C) Analysis",
+    title: "Realtime Flood Affected People Object",
     icon: SunIcon,
-    path: "/realtime-temperature-analysis",
+    path: "/realtime-flood-affected-detection",
   },
 ];
 
@@ -37,7 +37,7 @@ export function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = navListMenuItems.map(({ icon, title, path }, key) => (
-    <NavLink to={path} key={key} className="block">
+    <NavLink to={path} key={key} className="block bg-white">
       {/* @ts-ignore */}
       <MenuItem className="flex items-center gap-3 rounded-lg">
         <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2">

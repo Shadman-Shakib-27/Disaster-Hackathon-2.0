@@ -150,7 +150,7 @@ const LineChart = () => {
   };
 
   return (
-    <Container>
+    <Container className="mt-8">
       <SectionTitle fTitle="Temperature" lTitle="Analysis" description="" />
       <div className="-mt-10">
         <motion.div

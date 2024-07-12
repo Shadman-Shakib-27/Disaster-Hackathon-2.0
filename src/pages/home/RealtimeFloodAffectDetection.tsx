@@ -1,11 +1,9 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
-// import sampleVideo from "../../../assets/videos/Jamalpur Flood Detected.webm";
-import objDetection from "../../../assets/Images/ObjDetection.png";
+import sampleVideo from "../../assets/videos/Jamalpur Flood Detected.webm";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
-const SuppliesPost = () => {
+const RealtimeFloodAffectDetection = () => {
   return (
     <Container className="my-12">
       <SectionTitle
@@ -36,11 +34,14 @@ const SuppliesPost = () => {
           </p>
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-          <img
-            className="border border-green-500 rounded-md"
-            src={objDetection}
-            alt=""
-          />
+          <video
+            className="rounded-md p-2 border border-[#4CAE4F] shadow-md w-full md:w-11/12 lg:w-10/12"
+            controls
+            autoPlay
+          >
+            <source src={sampleVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </motion.div>
       <motion.div
@@ -51,15 +52,9 @@ const SuppliesPost = () => {
           duration: 2,
         }}
         className="text-center mt-10"
-      >
-        <a href="/realtime-flood-affected-detection">
-          <Button className="w-full md:w-auto px-8 md:px-12 py-4 md:py-6 font-semibold bg-[#4CAE4F] text-lg shadow-xl">
-            See More
-          </Button>
-        </a>
-      </motion.div>
+      ></motion.div>
     </Container>
   );
 };
 
-export default SuppliesPost;
+export default RealtimeFloodAffectDetection;
