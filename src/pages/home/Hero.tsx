@@ -42,7 +42,7 @@ const Hero = () => {
               </motion.h1>
               <motion.p
                 variants={introChildren}
-                className="text-xs sm:text-sm md:text-base lg:text-lg text-justify max-w-[45ch] mx-auto md:mx-0"
+                className="text-xl sm:text-xl md:text-black lg:text-lg text-justify max-w-[45ch] mx-auto md:mx-0"
               >
                 Stay ahead of nature's unpredictable events with EnviroMonitor.
                 Our state-of-the-art platform offers: Real-Time Disaster Alerts:

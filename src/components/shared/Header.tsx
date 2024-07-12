@@ -27,7 +27,7 @@ const navListMenuItems = [
     path: "/realtime",
   },
   {
-    title: "Realtime Temperature Analysis",
+    title: "Realtime Temp (°C) Analysis",
     icon: SunIcon,
     path: "/realtime-temperature-analysis",
   },
@@ -50,8 +50,8 @@ export function NavListMenu() {
           {/* @ts-ignore */}
           <Typography
             variant="h6"
-            color="blue-gray"
-            className="flex items-center text-sm font-bold"
+            color="black"
+            className="flex justify-center mx-6 items-center text-sm font-bold"
           >
             {title}
           </Typography>
@@ -74,7 +74,7 @@ export function NavListMenu() {
           <Typography as="div" variant="small" className="font-bold">
             {/* @ts-ignore */}
             <ListItem
-              className="flex items-center gap-2 py-2 pr-4 font-bold text-gray-900 hover:text-[#4CAE4F]"
+              className="flex justify-center items-center gap-2 mt-[0px] py-2 lg:pr-4 pr-0 font-bold text-black text-[16px] hover:text-[#4CAE4F]"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -96,7 +96,7 @@ export function NavListMenu() {
         </MenuHandler>
         {/* @ts-ignore */}
         <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
-          <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
+          <ul className="grid grid-cols-1 gap-y-2 outline-none outline-0">
             {renderItems}
           </ul>
         </MenuList>
@@ -112,46 +112,25 @@ export function NavList() {
   return (
     //@ts-ignore
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-      {/* @ts-ignore */}
-      <Typography
-        as="a"
-        href="/"
-        variant="small"
-        color="blue-gray"
-        className="font-medium"
-      >
+      <NavLink to="/" className="font-medium">
         {/* @ts-ignore */}
-        <ListItem className="flex items-center font-bold hover:text-[#4CAE4F] text-black  gap-2 py-2 pr-4">
+        <ListItem className="flex justify-center items-center font-bold hover:text-[#4CAE4F] text-black gap-2 py-2 lg:pr-4 pr-5">
           Home
         </ListItem>
-      </Typography>
+      </NavLink>
       <NavListMenu />
-      {/* @ts-ignore */}
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-medium"
-      >
+      <NavLink to="/contact" className="font-medium">
         {/* @ts-ignore */}
-        <ListItem className="flex text-black hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
+        <ListItem className="flex text-black justify-center hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
           Contact Us
         </ListItem>
-      </Typography>
-      {/* @ts-ignore */}
-      <Typography
-        as="a"
-        href="#"
-        variant="small"
-        color="blue-gray"
-        className="font-medium"
-      >
+      </NavLink>
+      <NavLink to="/about" className="font-medium">
         {/* @ts-ignore */}
-        <ListItem className="flex text-black hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
+        <ListItem className="flex text-black justify-center hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
           About Us
         </ListItem>
-      </Typography>
+      </NavLink>
     </List>
   );
 }
@@ -181,15 +160,12 @@ export default function NavbarWithMegaMenu() {
           <div className="hidden lg:flex items-center">
             <NavList />
           </div>
-          <div className="lg:hidden">
-            {/* @ts-ignore */}
-            <div onClick={() => setOpenNav(!openNav)}>
-              {openNav ? (
-                <XMarkIcon className="h-6 w-6 text-secondary" strokeWidth={3} />
-              ) : (
-                <Bars3Icon className="h-6 w-6 text-primary" strokeWidth={3} />
-              )}{" "}
-            </div>
+          <div onClick={() => setOpenNav(!openNav)} className="lg:hidden z-50">
+            {openNav ? (
+              <XMarkIcon className="h-6 w-6 text-secondary" strokeWidth={3} />
+            ) : (
+              <Bars3Icon className="h-6 w-6 text-primary" strokeWidth={3} />
+            )}
           </div>
         </div>
         <Collapse open={openNav}>
