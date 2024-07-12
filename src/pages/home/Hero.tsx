@@ -15,7 +15,7 @@ const Hero = () => {
   };
 
   return (
-    <motion.div className="setBgImage bg-dark-gray h-screen flex justify-center items-center mb-8">
+    <motion.div className="setBgImage bg-dark-gray min-h-screen flex justify-center items-center mb-10  lg:mb-0 md:mb-0">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 lg:gap-20 items-center">
           <motion.div
@@ -34,7 +34,7 @@ const Hero = () => {
             >
               <motion.h1
                 variants={introChildren}
-                className="text-xl mt-32 xxsm:mt-16 md:mt-0 lg:mt-0 xl:mt-0 md:text-3xl lg:text-4xl font-extrabold leading-tight text-center md:text-left"
+                className="text-lg xxsm:text-xl md:text-3xl lg:text-4xl lg:font-extrabold font-bold leading-tight text-center md:text-left mt-48 sm:mt-0 md:mt-0"
               >
                 Welcome to EnviroMonitor. <br />
                 Your Premier Platform for Environmental Disaster Prediction and
@@ -42,7 +42,7 @@ const Hero = () => {
               </motion.h1>
               <motion.p
                 variants={introChildren}
-                className="text-xl sm:text-xl md:text-black lg:text-lg text-justify max-w-[45ch] mx-auto md:mx-0"
+                className="text-sm xxsm:text-base sm:text-lg md:text-black lg:text-lg text-justify max-w-[45ch] mx-auto md:mx-0"
               >
                 Stay ahead of nature's unpredictable events with EnviroMonitor.
                 Our state-of-the-art platform offers: Real-Time Disaster Alerts:
@@ -57,12 +57,12 @@ const Hero = () => {
                 variants={introChildren}
                 className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center md:justify-start"
               >
-                <Button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-sm sm:text-base md:text-lg shadow-xl">
+                <Button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-xs sm:text-base md:text-lg shadow-xl">
                   Features
                 </Button>
                 <Button
                   variant="outline"
-                  className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-sm sm:text-base md:text-lg shadow-xl"
+                  className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-xs sm:text-base md:text-lg shadow-xl"
                 >
                   Benefits
                 </Button>
