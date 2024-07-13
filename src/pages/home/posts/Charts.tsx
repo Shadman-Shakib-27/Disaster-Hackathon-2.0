@@ -35,7 +35,7 @@ const districts = [
   "Brahmanbaria",
   "Chandpur",
   "Chapai Nawabganj",
-  "Chattogram",
+  "Chittagong",
   "Chuadanga",
   "Comilla",
   "Cox's Bazar",
@@ -404,7 +404,7 @@ const LineChart = () => {
           </select>
         </motion.div>
         {error && (
-          <motion.p className="text-center text-red-500 mb-4">{error}</motion.p>
+          <motion.p className="text-center text-red-500 mb-4"></motion.p>
         )}
         {loading ? (
           <div className="flex justify-center items-center mt-16">
