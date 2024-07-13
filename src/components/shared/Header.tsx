@@ -15,7 +15,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { SquaresPlusIcon, SunIcon } from "@heroicons/react/24/solid";
+import { SunIcon } from "@heroicons/react/24/solid";
 import logo from "../../assets/Images/logo.png";
 import Container from "./Container";
 import { NavLink } from "react-router-dom";
@@ -23,11 +23,11 @@ import { NavLink } from "react-router-dom";
 const navListMenuItems = [
   {
     title: "Realtime Data Analysis",
-    icon: SquaresPlusIcon,
+    icon: SunIcon,
     path: "/realtime",
   },
   {
-    title: "Realtime Flood Affected People Object",
+    title: "Flood Affected People",
     icon: SunIcon,
     path: "/realtime-flood-affected-detection",
   },
