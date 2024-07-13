@@ -1,56 +1,48 @@
-<!-- # Disaster Relief Client By Shaman
+# Disaster Hackathon 2.0
 
-Disaster Relief is an online platform dedicated to providing aid and resources during emergencies. The site connects users with essential services, donations, and volunteer opportunities to support disaster-stricken areas. It emphasizes rapid response and efficient distribution of resources to those in need. The platform is designed to facilitate community support and collaboration in times of crisis, ensuring timely and effective relief efforts.
+Welcome to Disaster Hackathon 2.0! This project is a single-page application designed to provide users with information and tools related to disaster management and response.
 
+## Project Overview
 
-## Table of Contents
+Disaster Hackathon 2.0 is a web application developed to facilitate access to disaster-related resources and tools. It aims to streamline the process of managing and responding to disasters through a user-friendly interface.
 
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Live Demo](#live-demo)
-- [Installation](#installation)
+### Key Features
 
-## Features
-
-- Connects users with essential services and resources during emergencies.
-- Facilitates donations and volunteer opportunities.
-- Emphasizes rapid response and efficient resource distribution.
-- Encourages community support and collaboration.
-- Ensures timely and effective relief efforts.
-
-## Tech Stack
-
-- **Frontend:**
-  - HTML5
-  - Tailwind CSS
-  - TypeScript
-  - React
-  - Redux
-  - Shadcn UI
-  - Sooner
-  - Rtk Query
-
-- **Backend:**
-  - MongoDB
+- **Real-time Disaster Information:** View up-to-date information on ongoing and past disasters.
+- **Resource Management:** Access and manage resources related to disaster response.
+- **User-friendly Interface:** Designed with simplicity and ease of use in mind.
 
 ## Live Demo
 
-Check out the live demo of Disaster Relief [Live Site](https://disaster-relief-client-shadman.vercel.app/).
+You can explore the live application at [Disaster Hackathon 2.0](https://disaster-hackathon-2-0.vercel.app/).
 
-## Installation
+## Getting Started
 
-1. **Clone the repository:**
+To get a local copy up and running, follow these instructions.
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+### Installation
+
+1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/Shadman-Shakib-27/Disaster-Relief-Client-Shadman.git
+   git clone https://github.com/yourusername/disaster-hackathon-2-0.git
+   ```
 
-   cd Disaster-Relief-Client-Shadman
-2. **Install dependencies::**
-
-   ```bash
-   npm install
-
-3. **Run the development server:**
+2. **Install Dependencies**
 
    ```bash
-   npm run dev -->
+   cd disaster-hackathon-2-0
+   ```
+
+3. **Start the Application**
+
+   ```bash
+   npm start
+   ```
