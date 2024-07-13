@@ -52,7 +52,7 @@ const RealtimeData = () => {
         className="text-center mt-10"
       >
         <a href="/realtime">
-          <Button className="w-full md:w-auto px-8 md:px-12 py-4 md:py-6 font-semibold bg-[#4CAE4F] text-lg shadow-xl">
+          <Button className="w-full text-white transition-all duration-300 md:w-auto px-8 md:px-12 py-4 md:py-6 font-bold bg-[#4CAE4F] text-lg shadow-xl">
             See More
           </Button>
         </a>

@@ -53,14 +53,14 @@ const Hero = () => {
               </motion.p>
               <motion.div
                 variants={introChildren}
-                className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center md:justify-start"
+                className="flex flex-col  transition-all duration-300 sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 justify-center md:justify-start"
               >
                 <Button className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-xs sm:text-base md:text-lg shadow-xl">
                   Features
                 </Button>
                 <Button
                   variant="outline"
-                  className="px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-xs sm:text-base md:text-lg shadow-xl"
+                  className="px-4 transition-all duration-300 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 font-semibold text-xs sm:text-base md:text-lg shadow-xl"
                 >
                   Benefits
                 </Button>
