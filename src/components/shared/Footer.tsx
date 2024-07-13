@@ -76,10 +76,17 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center py-8 text-white border-t-[1px] border-">
-          <p> @ {year}. All Rights Reserved</p>
-          {/* <p>Developed By Shadman</p> */}
-          <nav className="space-x-5">
+        <div className="flex justify-between flex-col lg:flex-row items-center py-8 text-white border-t-[1px]">
+          <p>
+            ©{year}. Developed By
+            <NavLink to="https://www.linkedin.com/in/shadman27">
+              <span className="text-secondary hover:text-white cursor-pointer font-bold">
+                {" "}
+                Shadman
+              </span>
+            </NavLink>
+          </p>
+          <nav className="space-x-5 mt-4 lg:mt-0 xl:mt-0 md:mt-0">
             <NavLink to="/">Terms</NavLink>
             <NavLink to="/">Privacy</NavLink>
             <NavLink to="/">Contact</NavLink>

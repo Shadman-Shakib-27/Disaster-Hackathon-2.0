@@ -270,7 +270,7 @@ const LineChart = () => {
             weight: "bold",
             size: 14,
           },
-          margin: "20px",
+          margin: "40px",
         },
       },
       y: {
@@ -283,6 +283,7 @@ const LineChart = () => {
             weight: "bold",
             size: 14,
           },
+          margin: "40px",
         },
       },
     },

@@ -1,13 +1,13 @@
 import Hero from "@/pages/home/Hero";
-import SuppliesPost from "./posts/SuppliesPost";
 import RealtimeData from "./RealtimeData";
+import PeopleDetection from "./posts/PeopleDetection";
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <RealtimeData />
-      <SuppliesPost />
+      <PeopleDetection />
     </div>
   );
 };
