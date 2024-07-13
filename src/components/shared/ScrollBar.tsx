@@ -15,12 +15,12 @@ const ScrollBar = () => {
     } else {
       //@ts-ignore
       scrollProgress.style.display = "";
-       //@ts-ignore
+      //@ts-ignore
       const scrollValue = Math.round((pos * 100) / calcHeight);
       //@ts-ignore
       const valueContent = "⇧";
       //@ts-ignore
-      scrollProgress.style.background = `conic-gradient(#1b8241 ${scrollValue}%,#2b294f ${scrollValue}%)`;
+      scrollProgress.style.background = `conic-gradient(#FF9900 ${scrollValue}%,#2b294f ${scrollValue}%)`;
       //@ts-ignore
       progressValue.textContent = `${valueContent}`;
     }
