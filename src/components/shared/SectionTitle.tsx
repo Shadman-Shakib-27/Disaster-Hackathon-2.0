@@ -16,7 +16,7 @@ const SectionTitle = ({ fTitle, lTitle, description }) => {
       ref={componentRef}
       className="w-[60%] pb-12 mx-auto flex flex-col justify-center items-center text-center gap-4"
     >
-      <h1 className="font-bold text-xl lg:text-4xl text-secondary ">
+      <h1 className="font-extrabold lg:font-bold text-[20px] lg:text-4xl text-secondary ">
         <span className="text-primary">{fTitle}</span> {lTitle}
       </h1>
       <p className="text-[18px]">{description}</p>
