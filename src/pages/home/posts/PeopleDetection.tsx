@@ -7,11 +7,7 @@ import { Button } from "@/components/ui/button";
 const PeopleDetection = () => {
   return (
     <Container className="my-12 mt-24">
-      <SectionTitle
-        fTitle="Realtime"
-        lTitle="Flood Affected People Detection"
-        description=""
-      />
+      <SectionTitle fTitle="Our" lTitle="Mission" description="" />
       <motion.div
         initial={{ x: 200, scale: 0.5 }}
         animate={{ x: 0, scale: 1 }}
@@ -19,12 +15,18 @@ const PeopleDetection = () => {
           type: "spring",
           duration: 2,
         }}
-        className="relative flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0"
+        className="relative flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0 lg:gap-8 gap-0"
       >
         <div className="w-full md:w-1/2 flex flex-col justify-center -mt-6 items-start p-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Our Mission</h2>
+          <h2 className="text-2xl md:text-[28px] font-bold mb-4">
+            Realtime Flood Affected People Detection
+          </h2>
           <p className="text-base md:text-lg mb-2">
-          Real-time flood-affected people detection leverages machine learning (ML) techniques to identify and monitor individuals impacted by flood events. This advanced approach integrates various data sources and ML models to provide timely and accurate information, which is crucial for effective disaster response and management.
+            Real-time flood-affected people detection leverages machine learning
+            (ML) techniques to identify and monitor individuals impacted by
+            flood events. This advanced approach integrates various data sources
+            and ML models to provide timely and accurate information, which is
+            crucial for effective disaster response and management.
           </p>
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">

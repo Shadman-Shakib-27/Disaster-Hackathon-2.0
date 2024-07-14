@@ -25,7 +25,7 @@ const RealtimeData = () => {
           />
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
+          <h2 className="text-2xl md:text-[28px] font-bold mb-4">
             Data Analysis Overview
           </h2>
           <p className="text-base md:text-lg mb-2">

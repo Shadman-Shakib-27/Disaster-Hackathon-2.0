@@ -15,7 +15,6 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { SunIcon } from "@heroicons/react/24/solid";
 import logo from "../../assets/Images/logo.png";
 import Container from "./Container";
 import { NavLink } from "react-router-dom";
@@ -23,12 +22,10 @@ import { NavLink } from "react-router-dom";
 const navListMenuItems = [
   {
     title: "Realtime Data Analysis",
-    icon: SunIcon,
     path: "/realtime",
   },
   {
     title: "Flood Affected People",
-    icon: SunIcon,
     path: "/realtime-flood-affected-detection",
   },
 ];
@@ -36,22 +33,16 @@ const navListMenuItems = [
 export function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const renderItems = navListMenuItems.map(({ icon, title, path }, key) => (
+  const renderItems = navListMenuItems.map(({ title, path }, key) => (
     <NavLink to={path} key={key} className="block bg-white">
       {/* @ts-ignore */}
       <MenuItem className="flex items-center gap-3 rounded-lg">
-        <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2">
-          {React.createElement(icon, {
-            strokeWidth: 2,
-            className: "h-6 text-gray-900 w-6",
-          })}
-        </div>
         <div>
           {/* @ts-ignore */}
           <Typography
             variant="h6"
             color="black"
-            className="flex justify-center mx-6 items-center text-sm font-bold"
+            className="flex p-1 hover:text-[#4CAE4F] justify-center mx-20 items-center text-sm font-bold"
           >
             {title}
           </Typography>
@@ -74,7 +65,7 @@ export function NavListMenu() {
           <Typography as="div" variant="small" className="font-bold">
             {/* @ts-ignore */}
             <ListItem
-              className="flex justify-center items-center gap-2 mt-[0px] py-2 lg:pr-4 pr-0 font-bold text-black text-[16px] hover:text-[#4CAE4F]"
+              className="flex justify-center items-center gap-2 mt-[0px] py-2 lg:pr-4 pr-0 font-bold text-black text-[16px] hover:text-[#4CAE4F] hover:transition-all duration-300"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
@@ -114,20 +105,20 @@ export function NavList() {
     <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
       <NavLink to="/" className="font-medium">
         {/* @ts-ignore */}
-        <ListItem className="flex justify-center items-center font-bold hover:text-[#4CAE4F] text-black gap-2 py-2 lg:pr-4 pr-5">
+        <ListItem className="flex justify-center items-center font-bold hover:text-[#4CAE4F] hover:transition-all duration-300 text-black gap-2 py-2 lg:pr-4 pr-5">
           Home
         </ListItem>
       </NavLink>
       <NavListMenu />
       <NavLink to="/contact" className="font-medium">
         {/* @ts-ignore */}
-        <ListItem className="flex text-black justify-center hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
+        <ListItem className="flex text-black justify-center hover:text-[#4CAE4F] hover:transition-all duration-300 font-bold items-center gap-2 py-2 pr-4">
           Contact Us
         </ListItem>
       </NavLink>
       <NavLink to="/about" className="font-medium">
         {/* @ts-ignore */}
-        <ListItem className="flex text-black justify-center hover:text-[#4CAE4F] font-bold items-center gap-2 py-2 pr-4">
+        <ListItem className="flex text-black justify-center hover:text-[#4CAE4F] hover:transition-all duration-300 font-bold items-center gap-2 py-2 pr-4">
           About Us
         </ListItem>
       </NavLink>
