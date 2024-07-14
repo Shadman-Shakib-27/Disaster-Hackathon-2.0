@@ -1,7 +1,7 @@
 import Container from "@/components/shared/Container";
 import SectionTitle from "@/components/shared/SectionTitle";
 import { motion } from "framer-motion";
-import imageSrc from "../../assets/Images/1.avif";
+import imageSrc from "../../assets/Images/Data_Analysis.png";
 import { Button } from "@/components/ui/button";
 
 const RealtimeData = () => {
@@ -18,13 +18,11 @@ const RealtimeData = () => {
         className="relative flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0"
       >
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
-          <a href="/" className="hover:scale-2000">
-            <img
-              src={imageSrc}
-              alt="Sample"
-              className="rounded-md shadow-md w-full md:w-11/12 lg:w-10/12"
-            />
-          </a>
+          <img
+            src={imageSrc}
+            alt="Sample"
+            className="rounded-md border hover:scale-105 hover:transition-all duration-500 border-[#4CAE4F] shadow-md w-full md:w-11/12 lg:w-10/12"
+          />
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-center items-start p-4">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">

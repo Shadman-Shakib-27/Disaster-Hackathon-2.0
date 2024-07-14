@@ -29,7 +29,7 @@ const PeopleDetection = () => {
         </div>
         <div className="w-full md:w-1/2 flex justify-center md:justify-start">
           <img
-            className="border border-green-500 rounded-md"
+            className="border border-[#4CAE4F] hover:scale-105 hover:transition-all duration-500 rounded-md"
             src={objDetection}
             alt=""
           />
