@@ -96,12 +96,6 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.setBgImageHelpHand {
-  background-image: url("./assets/Images/footer-bg.7e5aec06.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
 
 /* scroll bar progress  */
 #progress {
